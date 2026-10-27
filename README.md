@@ -1,5 +1,8 @@
-# Art of Teaching Mock Test
+# Bihar STET mock tests
 
-Offline CBT-style mock test with 1,231 English Art of Teaching MCQs, built from the Bihar STET chapterwise PDF. Open `index.html`; no server or sign-in needed.
+Offline CBT-style practice tests built from YCT chapterwise PDFs. No server or sign-in needed.
 
-Printed answer keys come from the source book. Some are flagged and have a separate verified answer (see the results page key switch). English translations have not been reviewed by a human.
+- `index.html` – Art of Teaching, 1,231 questions (complete).
+- `math/index.html` – Mathematics, in progress: currently PDF pages 3-99 (677 questions).
+
+Answer keys are the book's printed keys. Flagged questions carry a separate verified answer (key switch on the results page). English text is not human-reviewed.
