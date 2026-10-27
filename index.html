@@ -121,6 +121,7 @@ details.instr li { margin-bottom: 6px; }
 .pq.cur { outline: 2px solid var(--text); outline-offset: 2px; }
 .sw { width: 26px; height: 26px; min-height: 0; display: inline-flex; align-items: center; justify-content: center; font-size: .72rem; flex-shrink: 0; cursor: default; }
 .pal-toggle { display: none; }
+.pgroup { margin-bottom: 14px; }
 .pal-title { font-weight: 600; font-size: .88rem; margin-bottom: 8px; }
 
 .score-hero { display: flex; flex-wrap: wrap; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 16px; }
@@ -151,7 +152,8 @@ dialog::backdrop { background: rgba(20, 28, 40, .45); }
   main { padding-block: 14px 24px; }
   .card { padding: 14px; }
   .test-layout { grid-template-columns: 1fr; gap: 12px; }
-  .pal { position: static; max-height: none; order: 2; padding: 0; border: 0; background: none; }
+  .pal { position: static; max-height: none; order: -1; padding: 0; border: 0; background: none; }
+  .pal .pal-body { max-height: 55vh; overflow: auto; }
   .pal .pal-body { display: none; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 14px; margin-top: 8px; }
   .pal.open .pal-body { display: block; }
   .pal-toggle { display: flex; width: 100%; justify-content: space-between; }
@@ -752,16 +754,20 @@ dialog::backdrop { background: rgba(20, 28, 40, .45); }
     const legend = h('div', { class: 'legend' },
       ...[['nv', 'Not Visited'], ['na', 'Not Answered'], ['a', 'Answered'], ['m', 'Marked for Review'], ['am', 'Answered & Marked']].map(([k, t]) =>
         h('div', null, h('span', { class: 'sw pq ' + k }, c[k]), h('span', null, t))));
-    const idxs = s.qids.map((id, i) => i).filter((i) => byId.get(s.qids[i]).ch === cur.ch);
-    const grid = h('div', { class: 'pgrid', role: 'group', 'aria-label': 'Question palette' }, idxs.map((i) => {
-      const st = L.statusOf(s, s.qids[i]);
-      return h('button', { class: 'pq ' + st + (i === s.idx ? ' cur' : ''), 'aria-label': `Question ${i + 1}, ${STATUS_LABEL[st]}`, 'aria-current': i === s.idx ? 'true' : null, onclick: () => go(i) }, String(i + 1));
-    }));
+    const order = [...new Set(s.qids.map((id) => byId.get(id).ch))];
+    const groups = order.map((ch) => {
+      const idxs = s.qids.map((id, i) => i).filter((i) => byId.get(s.qids[i]).ch === ch);
+      const grid = h('div', { class: 'pgrid', role: 'group', 'aria-label': 'Chapter ' + ch + ' questions' }, idxs.map((i) => {
+        const st = L.statusOf(s, s.qids[i]);
+        return h('button', { class: 'pq ' + st + (i === s.idx ? ' cur' : ''), 'aria-label': `Question ${i + 1}, ${STATUS_LABEL[st]}`, 'aria-current': i === s.idx ? 'true' : null, onclick: () => go(i) }, String(i + 1));
+      }));
+      return h('div', { class: 'pgroup' }, h('div', { class: 'pal-title' }, `Ch ${ch}: ${chapterById.get(ch).name}`), grid);
+    });
     const pal = h('aside', { class: 'pal' + (paletteOpen ? ' open' : ''), 'aria-label': 'Question palette' },
       h('button', { class: 'btn pal-toggle', 'aria-expanded': String(paletteOpen), onclick: (e) => { paletteOpen = !paletteOpen; pal.classList.toggle('open', paletteOpen); e.currentTarget.setAttribute('aria-expanded', String(paletteOpen)); } },
-        `Question palette (${c.a + c.am} answered)`),
+        `Question palette – ${c.a + c.am} of ${s.qids.length} answered`),
       h('div', { class: 'pal-body' }, legend,
-        h('div', { class: 'pal-title' }, `Ch ${cur.ch}: ${chapterById.get(cur.ch).name}`), grid,
+        ...groups,
         h('div', { class: 'btn-row', style: 'margin-top:12px' }, h('button', { class: 'btn primary', onclick: () => submitTest('manual') }, 'Submit Test'))));
     return pal;
   }
