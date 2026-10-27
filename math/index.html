@@ -183,10 +183,18 @@ dialog::backdrop { background: rgba(20, 28, 40, .45); }
 .foot a { color: var(--brand); }
 .foot span { flex: 1 1 100%; }
 
+.left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.backlink { display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px 0 0; color: var(--brand); font-weight: 600; text-decoration: none; white-space: nowrap; }
+.backlink:hover { text-decoration: underline; }
+@media (max-width: 520px) { .brand-mark { display: none; } .backlink { font-size: .95rem; } }
+
+sup { font-size: .72em; line-height: 0; vertical-align: super; }
+
 </style></head><body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar" id="topbar">
-  <div class="brand"><span class="brand-mark" aria-hidden="true">CBT</span><span class="brand-title">Mathematics</span></div>
+  <div class="left"><a id="back" class="backlink" href="../">‹ Subjects</a>
+  <div class="brand"><span class="brand-mark" aria-hidden="true">CBT</span><span class="brand-title">Mathematics</span></div></div>
   <div class="topbar-right" id="topbar-right"></div>
 </header>
 <div id="banner" class="banner" role="alert" hidden></div>
@@ -404,9 +412,26 @@ dialog::backdrop { background: rgba(20, 28, 40, .45); }
     }
     for (const c of kids.flat(Infinity)) {
       if (c == null || c === false) continue;
-      e.append(c.nodeType ? c : document.createTextNode(String(c)));
+      if (c.nodeType) e.append(c);
+      else if (typeof c === 'string' && c.indexOf('^') !== -1) e.append(...rich(c));
+      else e.append(document.createTextNode(String(c)));
     }
     return e;
+  }
+  /* "x^2" and "3^(4n+2)" become real superscripts */
+  const EXP = /\^(\([^()]*\)|[+\-−]?[A-Za-z0-9]+(?:\.[0-9]+)?)/g;
+  function rich(text) {
+    const out = []; let last = 0, m;
+    EXP.lastIndex = 0;
+    while ((m = EXP.exec(text))) {
+      if (m.index > last) out.push(document.createTextNode(text.slice(last, m.index)));
+      const sup = document.createElement('sup');
+      sup.textContent = m[1][0] === '(' ? m[1].slice(1, -1) : m[1];
+      out.push(sup);
+      last = EXP.lastIndex;
+    }
+    if (last < text.length) out.push(document.createTextNode(text.slice(last)));
+    return out;
   }
   const say = (m) => { $('#live').textContent = ''; setTimeout(() => { $('#live').textContent = m; }, 30); };
   const pct = (x) => (x == null ? '–' : x.toFixed(1).replace(/\.0$/, '') + '%');
@@ -479,13 +504,36 @@ dialog::backdrop { background: rgba(20, 28, 40, .45); }
   /* ---------- view switching ---------- */
   let timerId = null, submitting = false;
   function stopTimer() { if (timerId) { clearInterval(timerId); timerId = null; } }
+  let popping = false;
+  function setBack(view) {
+    const b = $('#back'); if (!b) return;
+    if (view === 'dashboard') { b.textContent = '‹ Subjects'; b.setAttribute('href', '../'); b.onclick = null; return; }
+    b.textContent = view === 'test' ? '‹ Exit test' : '‹ Dashboard';
+    b.setAttribute('href', '#');
+    b.onclick = async (e) => {
+      e.preventDefault();
+      if (view === 'test' && !(await confirmDialog({ title: 'Leave this test?', body: ['Your answers are saved and you can resume from the dashboard.', store.session && store.session.endAt ? 'The timer keeps running while you are away.' : ''].filter(Boolean), ok: 'Leave test', cancel: 'Stay' }))) return;
+      renderDashboard();
+    };
+  }
   function show(view) {
     for (const v of ['dashboard', 'test', 'result']) $('#view-' + v).hidden = v !== view;
     if (view !== 'test') stopTimer();
     $('#topbar-right').replaceChildren();
+    setBack(view);
+    try {
+      if (!popping) {
+        if (view === 'dashboard') { if (location.hash) history.replaceState(null, '', location.pathname + location.search); }
+        else if (location.hash !== '#' + view) history.pushState(null, '', '#' + view);
+      }
+    } catch (e) { /* history is optional */ }
     window.scrollTo(0, 0);
     $('#main').focus({ preventScroll: true });
   }
+  window.addEventListener('popstate', () => {
+    const onApp = !$('#view-test').hidden || !$('#view-result').hidden;
+    if (onApp && location.hash !== '#test' && location.hash !== '#result') { popping = true; try { renderDashboard(); } finally { popping = false; } }
+  });
 
   /* ================= DASHBOARD ================= */
   function chapterProgress() {
