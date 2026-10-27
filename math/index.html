@@ -24,7 +24,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 .topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--panel); border-top: 3px solid var(--brand); border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 6px max(16px, env(safe-area-inset-right, 0px)) 6px max(16px, env(safe-area-inset-left, 0px)); }
 .brand { min-width: 0; }
-.brand-mark { display: none; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-mark { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 32px; padding: 0 6px; border-radius: 4px; background: var(--brand); color: #fff; font-weight: 700; font-size: .8rem; letter-spacing: .02em; flex-shrink: 0; }
 .brand-title { font-weight: 600; font-size: 1rem; color: var(--brand); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; }
 .topbar-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .timer { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 1.05rem; border: 1px solid var(--line); border-radius: 4px; padding: 5px 10px; background: var(--panel-2); min-width: 78px; text-align: center; }
@@ -170,6 +171,18 @@ dialog::backdrop { background: rgba(20, 28, 40, .45); }
 @media (max-width: 520px) { .brand-title { font-size: .92rem; } .btn.small.hide-sm { display: none; } }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 
+.presets { margin-bottom: 16px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin-bottom: 8px; }
+.tile { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left; border: 1px solid var(--line); background: var(--panel); border-radius: 4px; padding: 14px 16px; min-height: 76px; cursor: pointer; }
+.tile strong { font-size: 1.02rem; }
+.tile span { color: var(--muted); font-size: .86rem; }
+.tile:hover { border-color: var(--brand); }
+.tile.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+.tile.primary span { color: #d8e7ec; }
+.foot { max-width: 1240px; margin: 0 auto; padding: 18px max(16px, env(safe-area-inset-right, 0px)) 28px max(16px, env(safe-area-inset-left, 0px)); display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line); }
+.foot a { color: var(--brand); }
+.foot span { flex: 1 1 100%; }
+
 </style></head><body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="topbar" id="topbar">
@@ -182,6 +195,7 @@ dialog::backdrop { background: rgba(20, 28, 40, .45); }
   <section id="view-test" hidden></section>
   <section id="view-result" hidden></section>
 </main>
+<footer id="foot" class="foot"></footer>
 <dialog id="dlg" aria-labelledby="dlg-title">
   <form method="dialog" id="dlg-form">
     <h2 id="dlg-title"></h2>
@@ -370,6 +384,8 @@ dialog::backdrop { background: rgba(20, 28, 40, .45); }
   'use strict';
   const L = window.AOTLogic;
   const BANK = window.AOT_BANK;
+  const BRAND = { name: 'Mathematics', mark: 'M' };
+  const REPORT_URL = 'https://github.com/up2sumit/kunal/issues/new';
   const LS_KEY = 'mathcbt.v1';
   const HISTORY_MAX = 20;
   const STATUS_LABEL = { nv: 'Not Visited', na: 'Not Answered', a: 'Answered', m: 'Marked for Review', am: 'Answered & Marked for Review' };
@@ -444,9 +460,12 @@ dialog::backdrop { background: rgba(20, 28, 40, .45); }
       const ok = $('#dlg-ok'), ca = $('#dlg-cancel');
       ok.textContent = o.ok || 'OK'; ok.className = 'btn ' + (o.danger ? 'danger' : 'primary');
       ca.textContent = o.cancel || 'Cancel'; ca.hidden = !!o.hideCancel;
-      ca.onclick = () => d.close('cancel');
-      d.returnValue = '';
-      d.addEventListener('close', () => resolve(d.returnValue === 'ok'), { once: true });
+      let done = false;
+      const fin = (v) => { if (done) return; done = true; d.onclose = null; d.oncancel = null; $('#dlg-form').onsubmit = null; if (d.open) d.close(); resolve(v); };
+      ca.onclick = () => fin(false);
+      $('#dlg-form').onsubmit = (e) => { e.preventDefault(); fin(true); };
+      d.oncancel = () => fin(false);
+      d.onclose = () => fin(false);
       d.showModal();
       ok.focus();
     });
@@ -492,6 +511,7 @@ dialog::backdrop { background: rgba(20, 28, 40, .45); }
     root.append(h('h1', null, 'Mathematics – Practice Mock Test'),
       h('p', { class: 'hint' }, 'Questions are the Mathematics MCQs from the Bihar STET chapterwise solved-papers PDF, with explanations in English. Works fully offline.'));
 
+    root.append(presetsCard());
     if (BANK.meta.coverage) root.append(h('div', { class: 'notice warn' }, h('strong', null, 'Partial question bank. '), BANK.meta.coverage));
     if (store.session) {
       const s = store.session;
@@ -522,7 +542,7 @@ dialog::backdrop { background: rgba(20, 28, 40, .45); }
         h('td', { class: 'num' }, p.att ? `${p.att}` : '0'),
         h('td', { class: 'num' }, p.att ? pct((p.ok / p.att) * 100) : '–'));
     });
-    const builder = h('div', { class: 'card' },
+    const builder = h('div', { class: 'card', id: 'builder' },
       h('h2', null, 'Build your test'),
       h('fieldset', null, h('legend', null, '1. Chapters'),
         h('div', { class: 'btn-row', style: 'margin-bottom:8px' },
@@ -579,6 +599,31 @@ dialog::backdrop { background: rgba(20, 28, 40, .45); }
 
     root.append(h('div', { class: 'grid two-col' }, builder, side));
     refreshSummary();
+  }
+
+  function presetsCard() {
+    const bestWeak = (() => {
+      const p = chapterProgress();
+      const list = BANK.chapters.filter((c) => p[c.id].att >= 3).map((c) => ({ c, acc: p[c.id].ok / p[c.id].att })).sort((a, b) => a.acc - b.acc);
+      return list.length && list[0].acc < 0.7 ? list[0].c : null;
+    })();
+    const tile = (title, sub, onclick, primary) => h('button', { class: 'tile' + (primary ? ' primary' : ''), type: 'button', onclick }, h('strong', null, title), h('span', null, sub));
+    return h('div', { class: 'card presets' },
+      h('h2', null, 'Start now'),
+      h('div', { class: 'tiles' },
+        tile('Quick practice', '20 random questions, instant answers, no timer', () => startPreset('quick'), true),
+        tile('Full mock test', 'Up to 100 questions, timed, answers after submit', () => startPreset('mock')),
+        bestWeak ? tile('Fix my weak chapter', 'Ch ' + bestWeak.id + ': ' + bestWeak.name, () => startPreset('weak', bestWeak.id)) : tile('Practice by chapter', 'Pick chapters below', () => { const b = document.getElementById('builder'); if (b) b.scrollIntoView({ behavior: 'smooth' }); })),
+      h('p', { class: 'hint' }, 'Want to choose chapters, length or marking? Use "Build your test" below.'));
+  }
+  async function startPreset(kind, chapterId) {
+    const S = store.settings;
+    const all = chapterId ? [chapterId] : BANK.chapters.map((c) => c.id);
+    const pool = L.buildPool(BANK, all, true);
+    if (!pool.length) return;
+    if (store.session && !(await confirmDialog({ title: 'Replace the test in progress?', body: 'Starting a new test will discard the unfinished one.', ok: 'Start new test', danger: true }))) return;
+    const n = Math.min(kind === 'mock' ? 100 : 20, pool.length);
+    beginSession({ mode: kind === 'mock' ? 'mock' : 'practice', keyMode: S.keyMode, minutes: n, marksC: S.marksC, marksN: S.marksN, qids: L.pickQuestions(pool, { count: n, random: true }) });
   }
   const stat = (n, label) => h('div', { class: 'stat' }, h('b', null, n.toLocaleString()), h('span', null, label));
   const radio = (name, value, text, checked) => h('label', { class: 'radio-line' }, h('input', { type: 'radio', name, value, checked, onchange: onField }), h('span', null, text));
@@ -950,7 +995,23 @@ dialog::backdrop { background: rgba(20, 28, 40, .45); }
   }
 
   /* ================= BOOT ================= */
+  function decorate() {
+    const t = document.querySelector('.brand-title'); if (t) t.textContent = BRAND.name;
+    const m = document.querySelector('.brand-mark'); if (m) m.textContent = BRAND.mark;
+    const f = document.getElementById('foot');
+    if (f) f.replaceChildren(
+      h('span', null, 'Source: ' + BANK.meta.source + '. Last updated ' + BANK.meta.generated + '.'),
+      h('span', null, 'Answer keys are those printed in the book. Questions marked "key under review" show a separate verified answer. English text is not human-reviewed.'),
+      h('a', { href: REPORT_URL, target: '_blank', rel: 'noopener' }, 'Report an error in a question'),
+      h('a', { href: '../' }, 'All subjects'));
+    try {
+      const l = document.createElement('link'); l.rel = 'icon';
+      l.href = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0e4a5b"/><text x="32" y="43" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#fff" text-anchor="middle">' + BRAND.mark + '</text></svg>');
+      document.head.appendChild(l);
+    } catch (e) { /* icon is optional */ }
+  }
   function boot() {
+    decorate();
     if (bankErrors.length) {
       showBanner('The question bank failed validation, so the test is disabled. First problems: ' + bankErrors.slice(0, 8).join(' | '), true);
       $('#view-dashboard').hidden = false;
