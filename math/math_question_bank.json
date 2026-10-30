@@ -2,9 +2,9 @@
  "meta": {
   "title": "Mathematics - Practice Question Bank",
   "source": "BIHAR STET Mathematics Chapterwise Solved Papers Question Bank 2025 (YCT), PDF 352 pages",
-  "coverage": "Covers PDF pages 3-343 of 352 (Number System through Miscellaneous). The last pages (about 344-352) are still being added.",
+  "coverage": "",
   "generated": "2026-10-30",
-  "total": 2005,
+  "total": 2051,
   "keyModes": {}
  },
  "chapters": [
@@ -156,7 +156,7 @@
    "id": 25,
    "name": "Miscellaneous",
    "pages": "",
-   "count": 68
+   "count": 114
   }
  ],
  "questions": [
@@ -57946,7 +57946,13 @@
    "tip": "",
    "status": "note",
    "note": "Option (b) is read from the Hindi scan as 'a frustum of a cone and a cylinder'; the answer (a) is unaffected.",
-   "void": false
+   "void": false,
+   "dup": {
+    "group": "DUP-130",
+    "first": true,
+    "kind": "exact",
+    "of": null
+   }
   },
   {
    "id": "MTH-1939",
@@ -58004,7 +58010,13 @@
    "tip": "",
    "status": "ok",
    "note": "",
-   "void": false
+   "void": false,
+   "dup": {
+    "group": "DUP-131",
+    "first": true,
+    "kind": "exact",
+    "of": null
+   }
   },
   {
    "id": "MTH-1941",
@@ -58992,7 +59004,7 @@
    "note": "",
    "void": false,
    "dup": {
-    "group": "DUP-130",
+    "group": "DUP-132",
     "first": true,
     "kind": "exact",
     "of": null
@@ -59228,7 +59240,7 @@
    "note": "",
    "void": false,
    "dup": {
-    "group": "DUP-130",
+    "group": "DUP-132",
     "first": false,
     "kind": "exact",
     "of": "MTH-1974"
@@ -59897,6 +59909,1352 @@
    "tip": "",
    "status": "ok",
    "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2006",
+   "ch": 25,
+   "page": 344,
+   "ansPage": 344,
+   "srcNo": "Miscellaneous Q69",
+   "exam": "",
+   "q": "If y^(1/m) + y^(−1/m) = 2x, then (x² − 1)y₂ + xy₁ is equal to ______.",
+   "o": [
+    "m²y",
+    "y",
+    "2m²y",
+    "2y"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "y^(1/m) + y^(−1/m) = 2x, so y^(2/m) + 1 = 2x y^(1/m), i.e. y^(2/m) − 2x y^(1/m) + 1 = 0. Then y^(1/m) = x ± √(x² − 1) and y = (x ± √(x² − 1))^m. Differentiating, y₁ = ±m (x ± √(x² − 1))^m/√(x² − 1) = ±m y/√(x² − 1), so (x² − 1)y₁² = m²y². Differentiating again and dividing by 2y₁, (x² − 1)y₂ + xy₁ = m²y.",
+   "tip": "",
+   "status": "disputed",
+   "note": "The printed key is (b), but the printed working itself ends at (x² − 1)y₂ + xy₁ = m²y, which is option (a). The verified answer is (a).",
+   "void": false
+  },
+  {
+   "id": "MTH-2007",
+   "ch": 25,
+   "page": 344,
+   "ansPage": 344,
+   "srcNo": "Miscellaneous Q70",
+   "exam": "",
+   "q": "Let f(x) and g(x) be finitely differentiable functions for 0 ≤ x ≤ 1 such that f(0) = 2, g(0) = 0, f(1) = 6, g(1) = 2. Then there exists a root of the equation f′(x) = 2g′(x) lying in the interval ______.",
+   "o": [
+    "(1, 2)",
+    "(−1, 0)",
+    "(0, 1)",
+    "(2, 6)"
+   ],
+   "key": {
+    "printed": [
+     2
+    ],
+    "verified": [
+     2
+    ],
+    "official": null
+   },
+   "e": "By the mean value theorem on 0 ≤ x ≤ 1, [f(1) − f(0)]/(1 − 0) = f′(x) and [g(1) − g(0)]/(1 − 0) = g′(x) at some point. Here f(1) − f(0) = 6 − 2 = 4 and 2[g(1) − g(0)] = 2 × 2 = 4, so the two sides are equal. Hence the equation f′(x) = 2g′(x) has a root in the open interval (0, 1).",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2008",
+   "ch": 25,
+   "page": 344,
+   "ansPage": 344,
+   "srcNo": "Miscellaneous Q71",
+   "exam": "",
+   "q": "(b × c) × (c × a) is equal to ______.",
+   "o": [
+    "[a b c] c",
+    "[b a c] c",
+    "[b c c] c",
+    "[a b c] a"
+   ],
+   "key": {
+    "printed": [
+     0
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "(b × c) × (c × a) = [(b × c) · a] c − [(b × c) · c] a = [b c a] c − 0 = [a b c] c.",
+   "tip": "",
+   "status": "note",
+   "note": "The options are small and partly hard to read in the scan; the answer (a) is certain from the printed working.",
+   "void": false
+  },
+  {
+   "id": "MTH-2009",
+   "ch": 25,
+   "page": 344,
+   "ansPage": 344,
+   "srcNo": "Miscellaneous Q72",
+   "exam": "",
+   "q": "Let φ(x, y, z) be a scalar function of position in space. Then curl grad φ is equal to ______.",
+   "o": [
+    "0",
+    "φ",
+    "2φ",
+    "0 (zero vector)"
+   ],
+   "key": {
+    "printed": [
+     0
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "grad φ = (∂φ/∂x)i + (∂φ/∂y)j + (∂φ/∂z)k. Curl(grad φ) is the determinant with rows i j k; ∂/∂x ∂/∂y ∂/∂z; ∂φ/∂x ∂φ/∂y ∂φ/∂z, which equals (∂²φ/∂y∂z − ∂²φ/∂z∂y)i + (…)j + (…)k = 0i + 0j + 0k. So curl grad φ = 0.",
+   "tip": "",
+   "status": "note",
+   "note": "Options (a) and (d) both express zero (a scalar zero and the zero vector); the printed key is (a).",
+   "void": false
+  },
+  {
+   "id": "MTH-2010",
+   "ch": 25,
+   "page": 345,
+   "ansPage": 345,
+   "srcNo": "Miscellaneous Q73",
+   "exam": "",
+   "q": "The function f(x, y) = xy³/(x² + y⁶), x ≠ 0, y ≠ 0, with f(0, 0) = 0, is ______.",
+   "o": [
+    "Continuous at (0, 0)",
+    "Discontinuous at (0, 0)",
+    "Differentiable at (0, 0)",
+    "Continuous along the path y = x³ at (0, 0)"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "With f(0, 0) = 0, take x ≠ 0 and y = mx: lim f(x, mx) = lim m³x⁴/(x² + m⁶x⁶) = lim m³x²/(1 + m⁶x⁴) = 0. Now take y ≠ 0 and x = y³: lim f(y³, y) = lim y⁶/(y⁶ + y⁶) = 1/2. The limits differ, so f(x, y) is discontinuous at (0, 0).",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2011",
+   "ch": 25,
+   "page": 345,
+   "ansPage": 345,
+   "srcNo": "Miscellaneous Q74",
+   "exam": "",
+   "q": "Let x² − 7x + 1 = 0 be the characteristic equation of the given square matrix A. Then the inverse of A is given by ______.",
+   "o": [
+    "7I − A",
+    "7I + A",
+    "A − 7I",
+    "7A + I"
+   ],
+   "key": {
+    "printed": [
+     0
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "By the Cayley–Hamilton theorem, A² − 7A + I = 0. Multiplying by A⁻¹, A⁻¹A² − 7A⁻¹A + A⁻¹ = 0, so A − 7I + A⁻¹ = 0 and A⁻¹ = 7I − A.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2012",
+   "ch": 25,
+   "page": 345,
+   "ansPage": 345,
+   "srcNo": "Miscellaneous Q75",
+   "exam": "",
+   "q": "A function f is defined on R as f(x) = 1 if x is rational and −1 if x is irrational. Then ______.",
+   "o": [
+    "f is continuous at rational points",
+    "f is continuous at irrational points",
+    "f is continuous at x = 0",
+    "f is discontinuous for every x ∈ R"
+   ],
+   "key": {
+    "printed": [
+     3
+    ],
+    "verified": [
+     3
+    ],
+    "official": null
+   },
+   "e": "For every rational x, f(x) = 1, and for every irrational x, f(x) = −1. Near any point there are both rational and irrational numbers, so the limit of f does not exist anywhere. Hence the function is discontinuous at every point.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2013",
+   "ch": 25,
+   "page": 345,
+   "ansPage": 345,
+   "srcNo": "Miscellaneous Q76",
+   "exam": "",
+   "q": "Let (a, b) be a point of the domain of a real function f such that fₓ exists in a certain neighbourhood of (a, b) and fₓᵧ is continuous at (a, b). Then ______.",
+   "o": [
+    "fₓᵧ(a, b) = fᵧₓ(a, b)",
+    "fₓᵧ(a, b) = −fᵧₓ(a, b)",
+    "fₓᵧ(a, b) < fᵧₓ(a, b)",
+    "fₓₓ(a, b) = fᵧᵧ(a, b)"
+   ],
+   "key": {
+    "printed": [
+     0
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "For a real function f of two variables, if fₓ exists in a neighbourhood of the point (a, b) and fₓᵧ is continuous at (a, b), then fᵧₓ exists there and fₓᵧ(a, b) = fᵧₓ(a, b).",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2014",
+   "ch": 25,
+   "page": 345,
+   "ansPage": 345,
+   "srcNo": "Miscellaneous Q77",
+   "exam": "",
+   "q": "If A and B are two sets such that n(A) = 27, n(B) = 35 and n(A ∪ B) = 50, find n(A ∩ B).",
+   "o": [
+    "21",
+    "12",
+    "11",
+    "22"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "n(A ∪ B) = n(A) + n(B) − n(A ∩ B), so 50 = 27 + 35 − n(A ∩ B) and n(A ∩ B) = 62 − 50 = 12.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2015",
+   "ch": 25,
+   "page": 346,
+   "ansPage": 346,
+   "srcNo": "Miscellaneous Q78",
+   "exam": "",
+   "q": "If the Cartesian product of two sets A and B is A × B = {(3, 2), (3, 4), (5, 2), (5, 4)}, find set A.",
+   "o": [
+    "{3, 2}",
+    "{3, 4}",
+    "{3, 5}",
+    "{3, 3}"
+   ],
+   "key": {
+    "printed": [
+     2
+    ],
+    "verified": [
+     2
+    ],
+    "official": null
+   },
+   "e": "In A × B the first elements form A and the second elements form B. So A = {3, 5} and B = {2, 4}.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2016",
+   "ch": 25,
+   "page": 346,
+   "ansPage": 346,
+   "srcNo": "Miscellaneous Q79",
+   "exam": "",
+   "q": "Which of the following is equal to 1?",
+   "o": [
+    "2⁰ + 3⁰ + 4⁰",
+    "2⁰ × 3⁰ × 4⁰",
+    "(3⁰ − 2⁰) × 4⁰",
+    "(3⁰ − 2⁰) × (3⁰ + 2⁰)"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "Any non-zero number raised to the power 0 is 1. (a) 1 + 1 + 1 = 3. (b) 1 × 1 × 1 = 1. (c) (1 − 1) × 1 = 0. (d) (1 − 1) × (1 + 1) = 0 × 2 = 0. So only (b) equals 1.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2017",
+   "ch": 25,
+   "page": 346,
+   "ansPage": 346,
+   "srcNo": "Miscellaneous Q80",
+   "exam": "",
+   "q": "The coefficient of xy in the expression 3x²z + 7xyz − 2z²x is ______.",
+   "o": [
+    "3z",
+    "−2",
+    "7yz",
+    "7z"
+   ],
+   "key": {
+    "printed": [
+     3
+    ],
+    "verified": [
+     3
+    ],
+    "official": null
+   },
+   "e": "In 3x²z + 7xyz − 2z²x, the term containing xy is 7xyz = (7z) × xy. So the coefficient of xy is 7z.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2018",
+   "ch": 25,
+   "page": 346,
+   "ansPage": 346,
+   "srcNo": "Miscellaneous Q81",
+   "exam": "",
+   "q": "The second order derivative of the function x²⁰ is ______.",
+   "o": [
+    "20x¹⁹",
+    "380x¹⁸",
+    "20x¹⁸",
+    "380x¹⁹"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "y = x²⁰, so dy/dx = 20x¹⁹ and d²y/dx² = 20 × 19 x¹⁸ = 380x¹⁸.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2019",
+   "ch": 25,
+   "page": 346,
+   "ansPage": 346,
+   "srcNo": "Miscellaneous Q82",
+   "exam": "",
+   "q": "Raju finishes 1/3 part of a work in 1 hour. How much part of the work will be finished in 2⅕ hours?",
+   "o": [
+    "5/11",
+    "11/5",
+    "11/15",
+    "1/5"
+   ],
+   "key": {
+    "printed": [
+     2
+    ],
+    "verified": [
+     2
+    ],
+    "official": null
+   },
+   "e": "Raju does 1/3 of the work in 1 hour. In 2⅕ = 11/5 hours he does (1/3) × (11/5) = 11/15 of the work.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2020",
+   "ch": 25,
+   "page": 346,
+   "ansPage": 346,
+   "srcNo": "Miscellaneous Q83",
+   "exam": "",
+   "q": "A scooter travels 120 km in 3 hours and a train travels 120 km in 2 hours. Find the ratio of their speeds.",
+   "o": [
+    "3 : 2",
+    "2 : 3",
+    "5 : 2",
+    "2 : 5"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "The speed of the scooter = 120/3 = 40 km/h and the speed of the train = 120/2 = 60 km/h. The ratio = 40/60 = 2/3, i.e. 2 : 3.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2021",
+   "ch": 25,
+   "page": 346,
+   "ansPage": 346,
+   "srcNo": "Miscellaneous Q84",
+   "exam": "",
+   "q": "Find the derivative of sin⁻¹x with respect to x, assuming it exists.",
+   "o": [
+    "1/√(1 − x²)",
+    "1/√(x² − 1)",
+    "1/√(1 + x²)",
+    "None of these"
+   ],
+   "key": {
+    "printed": [
+     0
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "Let y = sin⁻¹x, so sin y = x. Differentiating with respect to x, cos y (dy/dx) = 1, so dy/dx = 1/cos y = 1/√(1 − sin²y) = 1/√(1 − x²).",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2022",
+   "ch": 25,
+   "page": 347,
+   "ansPage": 347,
+   "srcNo": "Miscellaneous Q85",
+   "exam": "",
+   "q": "Differentiate the following function with respect to x: cos(sin x).",
+   "o": [
+    "−sin x · cos(cos x)",
+    "−cos x · sin(sin x)",
+    "cos x · sin(sin x)",
+    "sin x · cos(cos x)"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "Let y = cos(sin x). Then dy/dx = −sin(sin x) × d(sin x)/dx = −sin(sin x) cos x = −cos x sin(sin x).",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2023",
+   "ch": 25,
+   "page": 347,
+   "ansPage": 347,
+   "srcNo": "Miscellaneous Q86",
+   "exam": "",
+   "q": "Which of the following is the solution of the integral ∫(2x² + eˣ) dx?",
+   "o": [
+    "(2/3)x³ + eˣ + c",
+    "(3/2)x³ + eˣ + c",
+    "(2/3)x²eˣ + c",
+    "None of these"
+   ],
+   "key": {
+    "printed": [
+     0
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "∫(2x² + eˣ) dx = 2x³/3 + eˣ + c = (2/3)x³ + eˣ + c.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2024",
+   "ch": 25,
+   "page": 347,
+   "ansPage": 347,
+   "srcNo": "Miscellaneous Q87",
+   "exam": "",
+   "q": "Evaluate the definite integral ∫ from 0 to 4 of (x + 1) dx.",
+   "o": [
+    "10",
+    "12",
+    "14",
+    "16"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "∫ from 0 to 4 of (x + 1) dx = [x²/2 + x] from 0 to 4 = 16/2 + 4 = 8 + 4 = 12.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2025",
+   "ch": 25,
+   "page": 347,
+   "ansPage": 347,
+   "srcNo": "Miscellaneous Q88",
+   "exam": "",
+   "q": "In the word 'MATHS', which of the following pairs of letters shows rotational symmetry?",
+   "o": [
+    "M and T",
+    "H and S",
+    "A and S",
+    "T and S"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "The order of rotational symmetry of H is H, of S is S, of M is W, of A is a different letter and of T is ⊥. So H and S show rotational symmetry (each looks the same after a half turn).",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2026",
+   "ch": 25,
+   "page": 347,
+   "ansPage": 347,
+   "srcNo": "Miscellaneous Q89",
+   "exam": "",
+   "q": "If set A = {1, 3, 5, 7} and set B = {1, 4, 7}, find the value of A − B.",
+   "o": [
+    "{1, 3, 5}",
+    "{3, 5, 7}",
+    "{3, 5}",
+    "{4}"
+   ],
+   "key": {
+    "printed": [
+     2
+    ],
+    "verified": [
+     2
+    ],
+    "official": null
+   },
+   "e": "A − B consists of the elements of A that are not in B. A = {1, 3, 5, 7} and B = {1, 4, 7}, so A − B = {3, 5}.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2027",
+   "ch": 25,
+   "page": 347,
+   "ansPage": 347,
+   "srcNo": "Miscellaneous Q90",
+   "exam": "",
+   "q": "On tossing a coin, the outcome is ______.",
+   "o": [
+    "Only head",
+    "Only tail",
+    "Neither head nor tail",
+    "Either head or tail"
+   ],
+   "key": {
+    "printed": [
+     3
+    ],
+    "verified": [
+     3
+    ],
+    "official": null
+   },
+   "e": "When a coin is tossed, the outcome is either a head or a tail.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2028",
+   "ch": 25,
+   "page": 347,
+   "ansPage": 347,
+   "srcNo": "Miscellaneous Q91",
+   "exam": "",
+   "q": "Which of the following is the multiplicative identity for an integer a?",
+   "o": [
+    "a",
+    "1",
+    "0",
+    "−1"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "The multiplicative identity of an integer a is 1, since a × 1 = 1 × a = a.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2029",
+   "ch": 25,
+   "page": 347,
+   "ansPage": 347,
+   "srcNo": "Miscellaneous Q92",
+   "exam": "",
+   "q": "An algebraic expression containing three terms is called a ______.",
+   "o": [
+    "Monomial",
+    "Binomial",
+    "Trinomial",
+    "None of these"
+   ],
+   "key": {
+    "printed": [
+     2
+    ],
+    "verified": [
+     2
+    ],
+    "official": null
+   },
+   "e": "An algebraic expression having three terms is called a trinomial, for example x + y + z or 2x + 7y + 3.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2030",
+   "ch": 25,
+   "page": 348,
+   "ansPage": 348,
+   "srcNo": "Miscellaneous Q93",
+   "exam": "",
+   "q": "The principal value of sin⁻¹(1/√2) is equal to which of the following?",
+   "o": [
+    "π/4",
+    "3π/4",
+    "5π/4",
+    "None of these"
+   ],
+   "key": {
+    "printed": [
+     0
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "Let y = sin⁻¹(1/√2). Then sin y = 1/√2 = sin π/4, so y = π/4.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2031",
+   "ch": 25,
+   "page": 348,
+   "ansPage": 348,
+   "srcNo": "Miscellaneous Q94",
+   "exam": "",
+   "q": "Find the additive inverse of the matrix A = [2 1 ; −3 0].",
+   "o": [
+    "A = [2 1 ; −3 0]",
+    "−A = [−2 −1 ; 3 0]",
+    "2A = [4 2 ; −6 0]",
+    "None of these"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "The additive inverse of A is −A. −A = −[2 1 ; −3 0] = [−2 −1 ; 3 0].",
+   "tip": "",
+   "status": "note",
+   "note": "The matrices are written row by row, with the two rows separated by a semicolon.",
+   "void": false
+  },
+  {
+   "id": "MTH-2032",
+   "ch": 25,
+   "page": 348,
+   "ansPage": 348,
+   "srcNo": "Miscellaneous Q95",
+   "exam": "",
+   "q": "Evaluate the definite integral ∫ from a to b of eˣ dx.",
+   "o": [
+    "eᵃ − eᵇ",
+    "eᵇ − eᵃ",
+    "eᵃᵇ",
+    "eᵇ/eᵃ"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "∫ from a to b of eˣ dx = [eˣ] from a to b = eᵇ − eᵃ.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2033",
+   "ch": 25,
+   "page": 348,
+   "ansPage": 348,
+   "srcNo": "Miscellaneous Q96",
+   "exam": "",
+   "q": "Evaluate the definite integral ∫ from 1 to 2 of x dx.",
+   "o": [
+    "3/2",
+    "2/3",
+    "3/5",
+    "2/5"
+   ],
+   "key": {
+    "printed": [
+     0
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "∫ from 1 to 2 of x dx = [x²/2] from 1 to 2 = 4/2 − 1/2 = 3/2.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2034",
+   "ch": 25,
+   "page": 348,
+   "ansPage": 348,
+   "srcNo": "Miscellaneous Q97",
+   "exam": "04.09.2023 S-I",
+   "q": "A pencil sharpened at one end is a combination of ______.",
+   "o": [
+    "A cone and a cylinder",
+    "A frustum of a cone and a cylinder",
+    "A hemisphere and a cylinder",
+    "Four cylinders"
+   ],
+   "key": {
+    "printed": [
+     0
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "A pencil sharpened at one end has one part in the shape of a cone and the other part in the shape of a cylinder.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false,
+   "dup": {
+    "group": "DUP-130",
+    "first": false,
+    "kind": "exact",
+    "of": "MTH-1938"
+   }
+  },
+  {
+   "id": "MTH-2035",
+   "ch": 25,
+   "page": 348,
+   "ansPage": 348,
+   "srcNo": "Miscellaneous Q98",
+   "exam": "04.09.2023 S-I",
+   "q": "A shuttlecock used for playing badminton has the shape of a combination of ______.",
+   "o": [
+    "A cylinder and a sphere",
+    "A cylinder and a hemisphere",
+    "A cone and a sphere",
+    "A frustum of a cone and a hemisphere"
+   ],
+   "key": {
+    "printed": [
+     3
+    ],
+    "verified": [
+     3
+    ],
+    "official": null
+   },
+   "e": "A shuttlecock used for playing badminton has one part in the shape of a hemisphere and the other part in the shape of a frustum of a cone.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2036",
+   "ch": 25,
+   "page": 349,
+   "ansPage": 349,
+   "srcNo": "Miscellaneous Q99",
+   "exam": "",
+   "q": "A solid that has only one vertex is a ______.",
+   "o": [
+    "Pyramid",
+    "Cube",
+    "Cone",
+    "Cylinder"
+   ],
+   "key": {
+    "printed": [
+     2
+    ],
+    "verified": [
+     2
+    ],
+    "official": null
+   },
+   "e": "A cube has 8 vertices, a pyramid (square-based) has 5, a cone has 1 and a cylinder has 0. So the solid with only one vertex is a cone.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2037",
+   "ch": 25,
+   "page": 349,
+   "ansPage": 349,
+   "srcNo": "Miscellaneous Q100",
+   "exam": "",
+   "q": "The number of surfaces of a cone is ______.",
+   "o": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "A cone has two surfaces: the first is flat (circular) and the second is curved.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2038",
+   "ch": 25,
+   "page": 349,
+   "ansPage": 349,
+   "srcNo": "Miscellaneous Q101",
+   "exam": "18.09.2023 S-V",
+   "q": "All six faces of a cube are ______.",
+   "o": [
+    "Equal",
+    "Different",
+    "Circular",
+    "Rectangular"
+   ],
+   "key": {
+    "printed": [
+     0
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "All six faces of a cube are equal because every edge of a cube is of equal length.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false,
+   "dup": {
+    "group": "DUP-131",
+    "first": false,
+    "kind": "exact",
+    "of": "MTH-1940"
+   }
+  },
+  {
+   "id": "MTH-2039",
+   "ch": 25,
+   "page": 349,
+   "ansPage": 349,
+   "srcNo": "Miscellaneous Q102",
+   "exam": "05.09.2023 S-IV",
+   "q": "In a cube, ______ pairs of equal faces are joined together.",
+   "o": [
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "All six faces of a cube are squares and each pair of opposite faces is equal, so a cube has 3 pairs of equal faces (PQRS ↔ TUVW, RSVU ↔ PQTW, PSVW ↔ QRUT).",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2040",
+   "ch": 25,
+   "page": 349,
+   "ansPage": 349,
+   "srcNo": "Miscellaneous Q103",
+   "exam": "05.09.2023 S-III",
+   "q": "What is the sum of a pair of opposite angles of a cyclic quadrilateral, in terms of right angles?",
+   "o": [
+    "One",
+    "Two",
+    "Three",
+    "Four"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "A cyclic quadrilateral is a quadrilateral whose four vertices lie on a circle. The sum of each pair of its opposite angles is 180°, which is two right angles.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2041",
+   "ch": 25,
+   "page": 349,
+   "ansPage": 350,
+   "srcNo": "Miscellaneous Q104",
+   "exam": "",
+   "q": "₹3,600 is divided so that half of the first part, one-third of the second part and one-fifth of the third part are equal. What is the third part?",
+   "o": [
+    "1000",
+    "1800",
+    "2400",
+    "1080"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "Let the parts be x, y and z. x/2 = y/3 = z/5 = k, so x = 2k, y = 3k and z = 5k. x + y + z = 3600, so 10k = 3600 and k = 360. The third part = 5k = 5 × 360 = ₹1800.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2042",
+   "ch": 25,
+   "page": 350,
+   "ansPage": 350,
+   "srcNo": "Miscellaneous Q105",
+   "exam": "",
+   "q": "An amount of ₹31,866 is divided among A, B and C such that the ratio of the shares of A and B is 9 : 8 and the ratio of the shares of A and C is 4 : 5. What is B's share (in ₹)?",
+   "o": [
+    "9,024",
+    "8,460",
+    "12,690",
+    "10,152"
+   ],
+   "key": {
+    "printed": [
+     0
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "A : B = 9 : 8 and A : C = 4 : 5. Making A equal, A : B : C = 36 : 32 : 45. The sum of the ratio = 36 + 32 + 45 = 113. B's share = (32/113) × 31866 = ₹9,024.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2043",
+   "ch": 25,
+   "page": 350,
+   "ansPage": 350,
+   "srcNo": "Miscellaneous Q106",
+   "exam": "",
+   "q": "An amount of ₹1,50,000 is divided among A, B and C so that they receive 20%, 30% and 50% respectively. A got as much as he would have got from another amount divided among the same three in the proportions 50%, 30% and 20% respectively. What is the total amount that B received from both distributions?",
+   "o": [
+    "₹60,000",
+    "₹63,000",
+    "₹58,000",
+    "₹55,000"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "Let the second amount be ₹x. A's shares are equal: 150000 × 20% = x × 50%, so x = ₹60,000. B's total from both distributions = 150000 × 30/100 + 60000 × 30/100 = 45000 + 18000 = ₹63,000.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2044",
+   "ch": 25,
+   "page": 350,
+   "ansPage": 350,
+   "srcNo": "Miscellaneous Q107",
+   "exam": "",
+   "q": "An amount (in ₹) is divided among A, B and C in the ratio 9 : 6 : 11. If A gives ₹500 of his share to C, the ratio of the shares of A, B and C becomes 4 : 3 : 6. What is the sum of the initial shares of B and C (in ₹)?",
+   "o": [
+    "₹7,800",
+    "₹7,500",
+    "₹8,500",
+    "₹9,100"
+   ],
+   "key": {
+    "printed": [
+     2
+    ],
+    "verified": [
+     2
+    ],
+    "official": null
+   },
+   "e": "Let A, B and C initially have 9x, 6x and 11x. After A gives ₹500 to C, A has 9x − 500 and C has 11x + 500, and (9x − 500)/(11x + 500) = 4/6. So 27x − 1500 = 22x + 1000, 5x = 2500 and x = 500. The sum of the initial shares of B and C = 17x = ₹8,500.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2045",
+   "ch": 25,
+   "page": 350,
+   "ansPage": 350,
+   "srcNo": "Miscellaneous Q108",
+   "exam": "KVS TGT DEC 2017",
+   "q": "If 50% of the difference between two numbers equals 30% of their sum, then what is the ratio between the numbers?",
+   "o": [
+    "1 : 2",
+    "1 : 3",
+    "1 : 4",
+    "1 : 5"
+   ],
+   "key": {
+    "printed": [
+     2
+    ],
+    "verified": [
+     2
+    ],
+    "official": null
+   },
+   "e": "Let the two numbers be x and y. (x − y) × 50% = (x + y) × 30%, so 5x − 5y = 3x + 3y, 2x = 8y and x/y = 4/1. So the ratio of the numbers is 1 : 4 (the smaller to the larger).",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2046",
+   "ch": 25,
+   "page": 350,
+   "ansPage": 350,
+   "srcNo": "Miscellaneous Q109",
+   "exam": "KVS TGT DEC 2017",
+   "q": "If the numerator of a fraction is increased by 10% and the denominator is decreased by 10%, then the percent reduction in the value of the fraction would be ______.",
+   "o": [
+    "10.5%",
+    "19.3%",
+    "22.2%",
+    "25.4%"
+   ],
+   "key": {
+    "printed": [
+     2
+    ],
+    "verified": [
+     2
+    ],
+    "official": null
+   },
+   "e": "Let the fraction be x/y. The new fraction = [x × 110/100]/[y × 90/100] = 11x/9y. The change in the fraction = 11x/9y − x/y = 2x/9y. The percentage change = (2x/9y) × (y/x) × 100 = 200/9 = 22.22%.",
+   "tip": "",
+   "status": "note",
+   "note": "The numerator goes up and the denominator goes down, so the value of the fraction actually increases by 22.2% (the printed working marks the change with a minus sign as 'loss', which is a sign error). The magnitude 22.2% is option (c), the printed key.",
+   "void": false
+  },
+  {
+   "id": "MTH-2047",
+   "ch": 25,
+   "page": 351,
+   "ansPage": 351,
+   "srcNo": "Miscellaneous Q110",
+   "exam": "11.09.2020 S-I",
+   "q": "Which of the following loci of a complex number z moves on the bisector of the second and fourth quadrants in the Argand plane?",
+   "o": [
+    "|z − 2| = |z + 2i|",
+    "|(z − 2)/(z − 3i)| = 1",
+    "|(z − i)/(z − 3i)| = 1",
+    "None of these"
+   ],
+   "key": {
+    "printed": [
+     0
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "Let z = x + iy. |z − 2| = |z + 2i| gives |(x − 2) + iy| = |x + i(y + 2)|, so (x − 2)² + y² = x² + (y + 2)². Then −4x + 4 = 4y + 4, i.e. y = −x. This is the bisector of the second and fourth quadrants.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2048",
+   "ch": 25,
+   "page": 351,
+   "ansPage": 351,
+   "srcNo": "Miscellaneous Q111",
+   "exam": "11.09.2020 S-I",
+   "q": "The image of the point A(1, 2) in the line mirror y = x is the point B, and the image of B in the line mirror y = 0 is the point (α, β). Then ______.",
+   "o": [
+    "α = 1, β = −2",
+    "α = 0, β = 0",
+    "α = 2, β = −1",
+    "None of these"
+   ],
+   "key": {
+    "printed": [
+     2
+    ],
+    "verified": [
+     2
+    ],
+    "official": null
+   },
+   "e": "Let B be (h, k). The midpoint of AB, ((h + 1)/2, (k + 2)/2), lies on y = x, so (k + 2)/2 = (h + 1)/2 and k = h − 1 ... (i). AB is perpendicular to y = x, so the slope of AB is −1: (k − 2)/(h − 1) = −1, so k − 2 = −h + 1 ... (ii). From (i) and (ii), h = 2 and k = 1, so B = (2, 1). The image of B(2, 1) in the line y = 0 is (2, −1), so α = 2 and β = −1.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2049",
+   "ch": 25,
+   "page": 352,
+   "ansPage": 352,
+   "srcNo": "Miscellaneous Q112",
+   "exam": "11.09.2020 S-I",
+   "q": "The distance between the point (−1, −5, −10) and the point of intersection of the line (x − 2)/3 = (y + 1)/4 = (z − 2)/12 and the plane x − y + z = 5 is ______.",
+   "o": [
+    "13 units",
+    "12 units",
+    "5 units",
+    "4 units"
+   ],
+   "key": {
+    "printed": [
+     0
+    ],
+    "verified": [
+     0
+    ],
+    "official": null
+   },
+   "e": "Let (x − 2)/3 = (y + 1)/4 = (z − 2)/12 = K. A point on the line is (3K + 2, 4K − 1, 12K + 2). Putting it in x − y + z = 5, (3K + 2) − (4K − 1) + (12K + 2) = 5, so 11K + 5 = 5 and K = 0. The point of intersection is (2, −1, 2). The distance from (−1, −5, −10) = √(3² + 4² + 12²) = √(9 + 16 + 144) = √169 = 13 units.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2050",
+   "ch": 25,
+   "page": 352,
+   "ansPage": 352,
+   "srcNo": "Miscellaneous Q113",
+   "exam": "11.09.2020 S-I",
+   "q": "The area bounded by the curve x^(2/3) + y^(2/3) = a^(2/3) is ______.",
+   "o": [
+    "πa²/8",
+    "3πa²/8",
+    "πa²/4",
+    "3πa²/4"
+   ],
+   "key": {
+    "printed": [
+     1
+    ],
+    "verified": [
+     1
+    ],
+    "official": null
+   },
+   "e": "The curve is the astroid x^(2/3) + y^(2/3) = a^(2/3). Its area = 4 ∫ from 0 to a of (a^(2/3) − x^(2/3))^(3/2) dx. Putting x = a cos³θ gives the area = 3πa²/8.",
+   "tip": "",
+   "status": "ok",
+   "note": "",
+   "void": false
+  },
+  {
+   "id": "MTH-2051",
+   "ch": 25,
+   "page": 352,
+   "ansPage": 352,
+   "srcNo": "Miscellaneous Q114",
+   "exam": "11.09.2020 S-I",
+   "q": "The area of the region bounded by the parabolas y² = 4ax and x² = 4by is ______.",
+   "o": [
+    "16a² sq. units",
+    "8a² sq. units",
+    "16a²/3 sq. units",
+    "4a² sq. units"
+   ],
+   "key": {
+    "printed": [
+     2
+    ],
+    "verified": [
+     2
+    ],
+    "official": null
+   },
+   "e": "With b = a, the parabolas are y² = 4ax and x² = 4ay. Solving, x⁴/(16a²) = 4ax, so x = 0 or x = 4a. Area = ∫ from 0 to 4a of (√(4ax) − x²/(4a)) dx = [(2√(4a) x^(3/2))/3 · ... ] from 0 to 4a = (32a²/3) − (16a²/3) = 16a²/3 sq. units.",
+   "tip": "",
+   "status": "note",
+   "note": "The printed working takes b = a (the question prints 4by, but the answer 16a²/3 holds only for b = a); the printed key (c) is retained.",
    "void": false
   }
  ]
